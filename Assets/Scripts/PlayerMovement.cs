@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public bool isGrounded;
     public float horizontalMove; //float for input in which direction player goes
+    [SerializeField] private Transform mesh;
     
     //get the animators properties?
     private Animator animator;
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        mesh.localScale = new Vector3( 1, 1, 1); //ugly way to flip character
     }
 
     // Update is called once per frame
@@ -28,6 +30,16 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontalMove = context.ReadValue<Vector2>().x; 
         animator.SetFloat("Speed", horizontalMove);
+        
+        // Flip Mesh visuals depending on input for player walking
+        if (horizontalMove > 0.01f)
+        {
+            mesh.localScale = new Vector3( 1, 1, 1);  // face right
+        }
+        else if (horizontalMove < -0.01f)
+        {
+            mesh.localScale = new Vector3(-1, 1, 1);  // face left
+        }
     }
 
     public void Jump(InputAction.CallbackContext context)

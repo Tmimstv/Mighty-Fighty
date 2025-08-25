@@ -176,6 +176,7 @@ MonoBehaviour:
   moveSpeed: 5
   isGrounded: 1
   horizontalMove: 0
+  mesh: {fileID: 0}
 --- !u!114 &452374305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +650,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1157869389}
+    m_TransformParent: {fileID: 808449191}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_LocalPosition.x
@@ -705,10 +706,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 2b79eaedafad243d0a7dc174a6c07d8e, type: 2}
     - target: {fileID: 5866666021909216657, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'mixamorig:Spine'\n\tFrom animation clip
-        'IdleXbot2'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -778,6 +776,7 @@ MonoBehaviour:
   moveSpeed: 5
   isGrounded: 0
   horizontalMove: 0
+  mesh: {fileID: 1157869389}
 --- !u!114 &667278421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -824,7 +823,19 @@ MonoBehaviour:
     m_ActionId: 6b444451-8a00-4d00-a97e-f47457f736a8
     m_ActionName: 'Player/Look[/Mouse/delta,/Pen/delta]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 667278420}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnLightAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
     m_ActionName: 'Player/Attack[/Mouse/leftButton,/Keyboard/enter]'
   - m_PersistentCalls:
@@ -956,6 +967,38 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.55, y: 1.84, z: 1}
   m_Center: {x: 0, y: 0.98, z: 0}
+--- !u!1 &808449190
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808449191}
+  m_Layer: 0
+  m_Name: VisualOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &808449191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808449190}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 452374303}
+  m_Father: {fileID: 1157869389}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1157869388
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,7 +1029,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 452374303}
+  - {fileID: 808449191}
   m_Father: {fileID: 667278419}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1157869390
