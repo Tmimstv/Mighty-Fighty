@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 44336259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -530,7 +530,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2.28, z: 1}
+  m_Size: {x: 1, y: 1.81, z: 1}
   m_Center: {x: 0, y: 0.9, z: 0}
 --- !u!54 &534942393
 Rigidbody:
@@ -649,15 +649,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 667278419}
+    m_TransformParent: {fileID: 1157869389}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7733994
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.049261082
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_LocalPosition.z
@@ -694,6 +694,21 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_Name
       value: X Bot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2b79eaedafad243d0a7dc174a6c07d8e, type: 2}
+    - target: {fileID: 5866666021909216657, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'mixamorig:Spine'\n\tFrom animation clip
+        'IdleXbot2'"
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -739,13 +754,12 @@ Transform:
   m_GameObject: {fileID: 667278416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -6.14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1157869389}
   - {fileID: 44336260}
-  - {fileID: 452374303}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &667278420
@@ -940,8 +954,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.55, y: 1.84, z: 1}
+  m_Center: {x: 0, y: 0.98, z: 0}
 --- !u!1 &1157869388
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157869389}
+  - component: {fileID: 1157869390}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -966,13 +981,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157869388}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 452374303}
   m_Father: {fileID: 667278419}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1157869390
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157869388}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7351d599616f34dce9547ebe2ce54af5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1581319494
 GameObject:
   m_ObjectHideFlags: 0
