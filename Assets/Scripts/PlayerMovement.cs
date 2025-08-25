@@ -4,17 +4,18 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb; //player body
-
     public float moveSpeed;
-    
     public bool isGrounded;
-    
     public float horizontalMove; //float for input in which direction player goes
+    
+    //get the animators properties?
+    private Animator animator;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontalMove = context.ReadValue<Vector2>().x; 
+        animator.SetFloat("Speed", horizontalMove);
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -44,6 +46,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("GROUNDED");
             isGrounded = true;
+        }
+    }
+
+    public void OnLightAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            animator.SetTrigger("Light");
         }
     }
 }
