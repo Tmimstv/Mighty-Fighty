@@ -1021,6 +1021,7 @@ GameObject:
   - component: {fileID: 692922675}
   - component: {fileID: 692922674}
   - component: {fileID: 692922673}
+  - component: {fileID: 692922677}
   m_Layer: 0
   m_Name: Fighter2root
   m_TagString: Untagged
@@ -1105,6 +1106,24 @@ Transform:
   - {fileID: 1468703225}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692922677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692922672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dafb0ade1a6045ba83e991e9166e51c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  knockback: 4
+  verticalPop: 1.5
+  hitstun: 0.25
+  rb: {fileID: 692922674}
+  renderersToFlash: []
 --- !u!1 &808449190
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,8 +1262,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.25, y: 0.16, z: 0.4}
-  m_Center: {x: -0.03, y: 0.57, z: 0.76}
+  m_Size: {x: 0.13, y: 0.13, z: 0.13}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &928457225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1270,6 +1289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c65d480e2138c4c18aab0def86a7c296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackerRoot: {fileID: 667278419}
+  damage: 10
 --- !u!4 &1084924133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}

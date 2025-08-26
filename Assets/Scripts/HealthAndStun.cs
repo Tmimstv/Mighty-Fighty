@@ -13,6 +13,8 @@ public class HealthAndStun : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Renderer[] renderersToFlash;
     
+    private Animator animator;
+    
     private int hp;
     private float stunTimer;
     
@@ -22,7 +24,7 @@ public class HealthAndStun : MonoBehaviour
     
     void Start()
     {
-        
+        animator = GetComponentInChildren<Animator>();
     }
     
     public void TakeHit(int dmg, float dirX)
@@ -31,17 +33,23 @@ public class HealthAndStun : MonoBehaviour
         stunTimer = hitstun;
 
         // knockback away from attacker
-        var v = rb.linearVelocity;
-        v.x = dirX * knockback;
-        v.y = Mathf.Max(v.y, verticalPop);
-        rb.linearVelocity = v;
+        // var v = rb.linearVelocity;
+        // v.x = dirX * knockback;
+        // v.y = Mathf.Max(v.y, verticalPop);
+        // rb.linearVelocity = v;
+        
+        animator.SetTrigger("Hit");
 
         StartCoroutine(Flash());
+        
+        
 
         if (hp == 0)
         {
             // simple KO for now
             Debug.Log($"{name} KO!");
+            
+            //to play knockout, make animation and add animator.SetTrigger("Knockout")
         }
     }
 
