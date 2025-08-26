@@ -8,13 +8,13 @@ public class CameraScript : MonoBehaviour
     [SerializeField] private Transform player2;
     
     [Header("Position")]
-    [SerializeField] private float height = 1f;     // how high above stage
-    [SerializeField] private float distance = -15f; // fixed Z distance back
+    [SerializeField] private float height = -0.14f;     // how high above stage
+    [SerializeField] private float distance = -12.7f; // fixed Z distance back
     [SerializeField] private float smooth = 5f;     // how snappy the camera is
 
     [Header("Zoom")]
-    [SerializeField] private float minSize = 2f;    // closest zoom
-    [SerializeField] private float maxSize = 10f;    // farthest zoom
+    [SerializeField] private float minSize = 1f;    // closest zoom
+    [SerializeField] private float maxSize = 6.5f;    // farthest zoom
     [SerializeField] private float zoomLimiter = 10f; // bigger = slower zoom change
 
     private Camera cam;
