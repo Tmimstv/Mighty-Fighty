@@ -38,19 +38,23 @@ public class HealthAndStun : MonoBehaviour
         // v.y = Mathf.Max(v.y, verticalPop);
         // rb.linearVelocity = v;
         
-        animator.SetTrigger("Hit");
-
-        StartCoroutine(Flash());
-        
-        
-
         if (hp == 0)
         {
             // simple KO for now
             Debug.Log($"{name} KO!");
             
             //to play knockout, make animation and add animator.SetTrigger("Knockout")
+            animator.SetTrigger("Knockout");
+            return;
         }
+        
+        animator.SetTrigger("Hit");
+
+        StartCoroutine(Flash());
+        
+        
+
+
     }
 
     public bool IsStunned => stunTimer > 0f;

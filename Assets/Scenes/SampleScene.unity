@@ -1290,7 +1290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackerRoot: {fileID: 667278419}
-  damage: 10
+  damage: 25
 --- !u!4 &1084924133 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6502182839619065283, guid: d9ee6bf53149e46e685fa0b3acaa6d53, type: 3}
