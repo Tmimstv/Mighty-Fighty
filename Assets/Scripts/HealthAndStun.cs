@@ -13,6 +13,8 @@ public class HealthAndStun : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private Renderer[] renderersToFlash;
     
+    
+    
     private Animator animator;
     
     private int hp;
