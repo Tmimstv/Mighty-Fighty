@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthAndStun : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Stats")]
     [SerializeField] private int maxHP = 100;
+    [SerializeField] private Slider healthBar;
+    
     [SerializeField] private float knockback = 4f;
     [SerializeField] private float verticalPop = 1.5f;
     [SerializeField] private float hitstun = 0.25f;
@@ -15,12 +18,19 @@ public class HealthAndStun : MonoBehaviour
     
     
     
+    
     private Animator animator;
     
     private int hp;
     private float stunTimer;
-    
-    public void Awake() { hp = maxHP; }
+
+    public void Awake()
+    {
+        hp = maxHP;
+        healthBar.minValue = 0;
+        healthBar.maxValue = maxHP;
+        healthBar.value = maxHP;
+    }
     
     
     
@@ -33,6 +43,8 @@ public class HealthAndStun : MonoBehaviour
     {
         hp = Mathf.Max(0, hp - dmg);
         stunTimer = hitstun;
+        healthBar.value = hp;
+        
 
         // knockback away from attacker
         // var v = rb.linearVelocity;
