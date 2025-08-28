@@ -17,7 +17,7 @@ public class HealthAndStun : MonoBehaviour
     [SerializeField] private Renderer[] renderersToFlash;
     
     
-    
+    [SerializeField] private ColliderProfileSwitcher colliderSwitch;
     
     private Animator animator;
     
@@ -59,6 +59,7 @@ public class HealthAndStun : MonoBehaviour
             
             //to play knockout, make animation and add animator.SetTrigger("Knockout")
             animator.SetTrigger("Knockout");
+            
             return;
         }
         
@@ -84,6 +85,17 @@ public class HealthAndStun : MonoBehaviour
         foreach (var r in renderersToFlash) r.material.EnableKeyword("_EMISSION");
         yield return new WaitForSeconds(0.06f);
         foreach (var r in renderersToFlash) r.material.DisableKeyword("_EMISSION");
+    }
+    
+    void StartKO()
+    {
+        colliderSwitch?.SetDowned(true);
+        // optionally lock movement, play KO anim, etc.
+    }
+    
+    void EndKO()
+    {
+        colliderSwitch?.SetDowned(false);
     }
     
 }

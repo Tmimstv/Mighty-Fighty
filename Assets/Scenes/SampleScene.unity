@@ -1448,6 +1448,8 @@ GameObject:
   - component: {fileID: 692922674}
   - component: {fileID: 692922673}
   - component: {fileID: 692922677}
+  - component: {fileID: 692922679}
+  - component: {fileID: 692922678}
   m_Layer: 0
   m_Name: Fighter2root
   m_TagString: Untagged
@@ -1551,6 +1553,43 @@ MonoBehaviour:
   hitstun: 0.25
   rb: {fileID: 692922674}
   renderersToFlash: []
+  colliderSwitch: {fileID: 0}
+--- !u!65 &692922678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692922672}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 2.44, y: 0.001, z: 1}
+  m_Center: {x: 0.81, y: 0, z: 0}
+--- !u!114 &692922679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692922672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3bdb23b7ba54b3d97081829f496485, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  standingCollider: {fileID: 692922675}
+  downedCollider: {fileID: 692922678}
+  downedAsTrigger: 0
 --- !u!1 &808449190
 GameObject:
   m_ObjectHideFlags: 0
