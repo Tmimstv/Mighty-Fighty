@@ -4,7 +4,7 @@ Mighty Fighty is my first fighting game. I've completed the Unity Essentials Pat
 
 
 Going to eventually make a youtube playlist of the progress, but I am also working on other games right now so it may take time
-https://youtu.be/PL9SKHGcJ7s
+[https://youtu.be/PL9SKHGcJ7s](https://youtu.be/Y15LPatKtuM)
 
 
 Making and adding in my own animations from blender
